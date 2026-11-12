@@ -22,7 +22,7 @@ We moved from a visual prototype to an application backed by real Supabase data,
 An understandable purchasing journey matters as much as integration code. Buyers need to know when they have only expressed interest, when they can pay, and when a purchase is actually confirmed. Payment status must come from verified server responses, not a button click.
 
 ## What's next
-Durable user accounts and recovery, seller onboarding, product-specific seller photos, fulfillment coordination, refunds, production readiness and broader concurrency testing. External webhook delivery still needs independent verification with a publicly reachable HTTPS deployment.
+Durable user accounts and recovery, seller onboarding, product-specific seller photos, fulfillment coordination, refunds, production readiness and broader concurrency testing. The application is deployed on Vercel, where we verified a real Sandbox purchase and receipt of its signed capture webhook.
 
 ## Demo and testing
 The demo uses PayPal Sandbox and test balance. Each payment belongs to one buyer and goes to the Sandbox application merchant. This is not escrow, pooled group funds, automatic seller payouts or a physical delivery service. Product images are illustrative references. Follow README.md to run the app and test with separate buyer and seller profiles.
@@ -31,8 +31,8 @@ The demo uses PayPal Sandbox and test balance. Each payment belongs to one buyer
 Next.js, React, TypeScript, Supabase, PostgreSQL, Groq, Qwen, PayPal JavaScript SDK v6, PayPal Orders API v2.
 
 ## Links to add before submitting
-- Public source repository URL
+- Public source repository: https://github.com/JosePizarro1/DeseAI
 - Public YouTube demonstration URL
-- Hosted demo URL, if available (otherwise complete repository setup instructions)
+- Hosted demo: https://deseai-rho.vercel.app
 
 Do not submit this document with placeholder links. Provide test access instructions without publishing private server credentials.

@@ -67,3 +67,10 @@ Revisión del 10 de noviembre de 2026. Entorno local con Supabase, Qwen/Groq y P
 - Build de producción aprobado después de ambas correcciones.
 - Video grabado en sesiones independientes. Contraseñas y videos originales de acceso quedan en el espacio local privado, fuera del paquete fuente.
 - La recepción de webhooks desde una URL pública continúa pendiente de verificación.
+
+
+## Despliegue manual verificado — 12 de noviembre de 2026
+
+URL pública https://deseai-rho.vercel.app. Proyecto Vercel `deseai`, sin conexión automática con GitHub. Ocho variables de producción configuradas.
+
+Pruebas desde la URL pública: alta anónima única, análisis real con cuatro coincidencias, grupo y botón PayPal disponibles, compra Sandbox por USD 19.99 completada y consultable en Mis pedidos. Notificación real PAYMENT.CAPTURE.COMPLETED recibida, firma validada y evento registrado en Supabase. Órdenes sin sesión y webhook sin firma rechazados con 401. Archivo .env.local inaccesible (404). Esta comprobación resuelve el pendiente anterior de recepción externa de webhooks.

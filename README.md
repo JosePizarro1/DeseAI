@@ -2,6 +2,10 @@
 
 DeseAI connects people who describe compatible shopping wishes in different words. Qwen on Groq interprets the product, city and budget and ranks matching public wishes. An approved seller can publish an offer for a group; once its minimum interest count is reached, each interested buyer can pay for one unit using **PayPal Sandbox**.
 
+**Live demo:** https://deseai-rho.vercel.app
+
+Deployed manually with the Vercel CLI. There is no automatic GitHub deployment connection. See [DEPLOYMENT.md](DEPLOYMENT.md).
+
 ## Run locally
 
 Requires Node.js 22 or newer, npm, a Supabase project, a Groq API key and PayPal Sandbox application credentials.
@@ -40,7 +44,7 @@ No real payment or physical fulfillment is provided. Each Sandbox capture goes t
 - `POST /api/paypal/capture` validates ownership, reserves stock transactionally and verifies the capture amount and currency before recording a completed payment.
 - `POST /api/paypal/webhook` verifies PayPal signatures and reconciles supported capture events with idempotent processing.
 
-To test webhooks, expose the application at a public HTTPS URL and register `https://YOUR_DOMAIN/api/paypal/webhook` in the same PayPal Sandbox application. Subscribe to `PAYMENT.CAPTURE.COMPLETED`, `PAYMENT.CAPTURE.PENDING` and `PAYMENT.CAPTURE.DENIED`, then set `PAYPAL_WEBHOOK_ID`. Local checkout can confirm through the capture response without an externally reachable webhook; external webhook delivery has not yet been independently verified.
+To test webhooks, expose the application at a public HTTPS URL and register `https://YOUR_DOMAIN/api/paypal/webhook` in the same PayPal Sandbox application. Subscribe to `PAYMENT.CAPTURE.COMPLETED`, `PAYMENT.CAPTURE.PENDING` and `PAYMENT.CAPTURE.DENIED`, then set `PAYPAL_WEBHOOK_ID`. Local checkout can confirm through the capture response without an externally reachable webhook; the deployed demo received a real `PAYMENT.CAPTURE.COMPLETED` notification, validated its signature through PayPal and recorded the event in Supabase on 12 November 2026.
 
 ## Architecture and access
 
@@ -59,7 +63,7 @@ npm run typecheck
 npm run build
 ```
 
-The production build has passed locally. Real Groq analysis/matching, Supabase persistence and a completed PayPal Sandbox purchase were exercised during development. The payment logic scripts include simulated contract tests; they do not prove external webhook delivery or exhaustive concurrency safety. Fulfillment, refunds, durable user accounts, production payments and recovery/reconciliation jobs remain future work. See `MATRIZ_QA_V19.md` for detailed Spanish QA notes.
+The production build has passed locally. Real Groq analysis/matching, Supabase persistence and a completed PayPal Sandbox purchase were exercised during development. The payment logic scripts include simulated contract tests; they do not prove exhaustive concurrency safety. Separately, a real Sandbox checkout and signed webhook were verified on the hosted Vercel deployment. Fulfillment, refunds, durable user accounts, production payments and recovery/reconciliation jobs remain future work. See `MATRIZ_QA_V19.md` for detailed Spanish QA notes.
 
 ## Hackathon submission
 
