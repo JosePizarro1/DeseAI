@@ -32,7 +32,7 @@ Next.js, React, TypeScript, Supabase, PostgreSQL, Groq, Qwen, PayPal JavaScript 
 
 ## Links to add before submitting
 - Public source repository: https://github.com/JosePizarro1/DeseAI
-- Public YouTube demonstration URL
+- Public YouTube demonstration: https://youtu.be/-AOhPvTEstk
 - Hosted demo: https://deseai-rho.vercel.app
 
 Do not submit this document with placeholder links. Provide test access instructions without publishing private server credentials.

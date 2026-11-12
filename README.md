@@ -4,6 +4,8 @@ DeseAI connects people who describe compatible shopping wishes in different word
 
 **Live demo:** https://deseai-rho.vercel.app
 
+**Demo video:** https://youtu.be/-AOhPvTEstk
+
 Deployed manually with the Vercel CLI. There is no automatic GitHub deployment connection. See [DEPLOYMENT.md](DEPLOYMENT.md).
 
 ## Run locally
