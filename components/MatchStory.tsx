@@ -1,0 +1,8 @@
+'use client';
+import React from 'react';
+
+export default function MatchStory() {
+  return (
+    <section className={"ds-match-story"} id={"coincidencias"} aria-labelledby={"ds-match-title"}>{"\n"}<div className={"ds-match-shell"}>{"\n"}<div className={"ds-match-copy ds-enter"} data-animate={""}>{"\n"}<span className={"ds-match-eyebrow"}><span aria-hidden={"true"}>{"✧"}</span>{" LO QUE IMAGINAS PUEDE CONECTARTE"}</span>{"\n"}<h2 id={"ds-match-title"}>{"Quizá no eres "}<span>{"el único."}</span></h2>{"\n"}<p>{"Buscas unos audífonos inalámbricos. Alguien más también. DeseAI reconoce intereses compatibles para que puedan encontrar una oportunidad juntos."}</p>{"\n"}<div className={"ds-match-stat"} role={"note"}><span className={"ds-match-stat-icon"} aria-hidden={"true"}>{"✦"}</span><span><strong>{"4 coincidencias"}</strong><small>{"Ejemplo ilustrativo de la demo"}</small></span></div>{"\n"}<div className={"ds-match-actions"}><a className={"ds-match-btn ds-match-btn-primary"} href={"/crear"}>{"Descubrir coincidencias "}<span aria-hidden={"true"}>{"↗"}</span></a><a className={"ds-match-btn ds-match-btn-ghost"} href={"/explorar"}>{"Explorar deseos"}</a></div>{"\n"}</div>{"\n"}<div className={"ds-match-visual ds-enter"} data-animate={""}>{"\n"}<img src={"/assets/coincidencias-mascota.webp"} width={"720"} height={"510"} loading={"lazy"} alt={"Deyo descubre que otras personas también quieren audífonos inalámbricos"} />{"\n"}<div className={"ds-match-floating"} aria-label={"Interés compartido de ejemplo"}><span className={"ds-match-floating-heart"} aria-hidden={"true"}>{"♡"}</span><span>{"Yo también los quiero"}</span></div>{"\n"}</div>{"\n"}</div>{"\n"}</section>
+  );
+}

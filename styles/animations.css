@@ -1,0 +1,63 @@
+/* DeseAI V14 – animaciones de interfaz. Sin cambios de layout, imágenes ni contenido. */
+/* La clase solo se activa cuando el observador JS está disponible. */
+.motion-ready #view-home .motion-reveal {
+ opacity:0;
+ transform:translate3d(0,38px,0) scale(.99);
+ transition: opacity .78s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1);
+ transition-delay:var(--motion-delay,0ms);
+}
+.motion-ready #view-home .motion-reveal.motion-visible {
+ opacity:1;
+ transform:translate3d(0,0,0) scale(1);
+}
+/* Intro secuencial: texto -> CTA -> escena, sin bloquear el primer render. */
+@keyframes mv14-intro {from{opacity:0;translate:0 25px}to{opacity:1;translate:0 0}}
+@keyframes mv14-soft-in {from{opacity:0}to{opacity:1}}
+.motion-ready #view-home .stage-hero-content .stage-kicker {animation:mv14-intro .70s both cubic-bezier(.22,1,.36,1) .04s}
+.motion-ready #view-home .stage-hero-content h1 {animation:mv14-intro .82s both cubic-bezier(.22,1,.36,1) .13s}
+.motion-ready #view-home .stage-hero-content .stage-subtitle {animation:mv14-intro .75s both cubic-bezier(.22,1,.36,1) .26s}
+.motion-ready #view-home .stage-hero-content .stage-cta {animation:mv14-intro .75s both cubic-bezier(.22,1,.36,1) .39s}
+.motion-ready #view-home .stage-scene {animation:mv14-soft-in 1.0s both ease-out .28s; translate:0 var(--mv14-parallax,0px)}
+/* Preserve the original independent float animations and all interactive cards. */
+.motion-ready #view-home .stage-bubble {animation:mv14-soft-in .8s both ease-out}
+.motion-ready #view-home .stage-buyer-one {animation-delay:.64s}
+.motion-ready #view-home .stage-buyer-two {animation-delay:.76s}
+.motion-ready #view-home .stage-seller {animation-delay:.88s}
+.motion-ready #view-home .stage-match-note {animation:mv14-soft-in .8s both ease-out 1.04s}
+.motion-ready #view-home .stage-orbits path{stroke-dasharray:10 15;animation:mv14-orbit 36s linear infinite}
+@keyframes mv14-orbit{to{stroke-dashoffset:-350}}
+/* El tránsito al siguiente bloque sucede por composición, no alterando su tamaño. */
+.motion-ready #view-home .stage-how-inner {translate:0 var(--mv14-how-rise,0px)}
+.motion-ready #view-home .stage-how-heading.motion-reveal {transition-duration:.95s,1.05s}
+.motion-ready #view-home .stage-step {transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .95s cubic-bezier(.22,1,.36,1),box-shadow .24s;transform:translateY(54px) scale(.98)}
+.motion-ready #view-home .stage-step.is-visible {opacity:1;transform:translateY(0) scale(1)}
+.motion-ready #view-home .ds-match-stat{transition:transform .55s cubic-bezier(.2,1.45,.35,1), opacity .55s;transform:translateY(8px) scale(.97)}
+.motion-ready #view-home .ds-visible .ds-match-stat{transform:translateY(0) scale(1)}
+/* Pequeño énfasis al estar en pantalla: no cambia el layout ni tapa elementos. */
+.motion-ready #view-home .ds-match-floating {animation:mv14-pulse 4.8s ease-in-out infinite}
+@keyframes mv14-pulse{0%,100%{translate:0 0}50%{translate:0 -5px}}
+.motion-ready #view-home .ds-wish-art.motion-visible img{animation:mv14-art-breathe 6.8s ease-in-out infinite}
+@keyframes mv14-art-breathe{0%,100%{translate:0 0}50%{translate:0 -7px}}
+/* Botones y tarjetas mantienen su comportamiento original. */
+.motion-ready #view-home .stage-button,
+.motion-ready #view-home .ds-wish-btn {transition:transform .22s ease,box-shadow .28s ease,background .28s ease}
+@media (max-width:720px) {
+ .motion-ready #view-home .motion-reveal {transform:translate3d(0,22px,0) scale(1); transition-duration:.6s,.7s}
+ .motion-ready #view-home .stage-how-inner{translate:0 var(--mv14-how-rise,0px)}
+ .motion-ready #view-home .stage-step{transform:translateY(32px) scale(.99)}
+}
+@media(prefers-reduced-motion:reduce) {
+ .motion-ready #view-home .motion-reveal,
+ .motion-ready #view-home .stage-hero-content > *,
+ .motion-ready #view-home .stage-scene,
+ .motion-ready #view-home .stage-bubble,
+ .motion-ready #view-home .stage-match-note,
+ .motion-ready #view-home .ds-wish-art img,
+ .motion-ready #view-home .stage-step {
+  animation:none!important;transition:none!important;
+  opacity:1!important;transform:none!important;translate:none!important;
+ }
+ .motion-ready #view-home .stage-how-inner{translate:none!important}
+ .motion-ready #view-home .stage-orbits path,
+ .motion-ready #view-home .ds-match-floating{animation:none!important}
+}

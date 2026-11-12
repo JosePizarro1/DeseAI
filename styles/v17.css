@@ -1,0 +1,22 @@
+/* Capa funcional V17. No altera los layouts aprobados de V15/V16. */
+.v17-cloud-pill{display:inline-flex;align-items:center;max-width:100%;padding:8px 14px;margin-top:12px;border-radius:999px;background:#eff3fc;color:#53637b;font-size:12px;font-weight:650}
+.v17-cloud-pill.connected{background:#eaf8f0;color:#157348}
+.v17-cloud-note{font-size:13px;color:#6a7792;line-height:1.5}
+.v17-result-note{font-size:13px;line-height:1.65;color:#56657e;margin-top:14px}
+.v17-error{color:#b83242;font-size:13px;margin:12px 0}
+.v17-match-icon{display:grid;place-items:center;background:#eff3ff;min-width:58px;height:58px;border-radius:14px;font-size:27px}
+.v17-match{display:flex;align-items:center;gap:14px;text-decoration:none}
+.v17-match>span:nth-child(2){flex:1;min-width:0}
+.v17-section-heading{display:flex;justify-content:space-between;align-items:baseline;gap:15px;margin:18px 0 20px}
+.v17-section-heading h2{font-size:clamp(23px,3vw,32px);letter-spacing:-.04em;color:#17263c;margin:0}
+.v17-section-heading>span{font-size:13px;color:#77839b}
+.v17-live-empty{background:#f4f7fc;border:1px solid #e4ecf8;border-radius:20px;padding:30px;color:#516079;margin:10px 0 30px;line-height:1.6}
+.v17-live-empty a{color:#1368e7;font-weight:700}
+.v17-live-card{border-color:#dce7fa!important}
+.v17-card-art{display:grid;place-items:center;min-height:185px;background:linear-gradient(130deg,#eff5ff,#dceaff);font-size:84px}
+.v17-published-detail h1{font-size:clamp(32px,5vw,55px);letter-spacing:-.045em;margin:13px 0 36px;color:#17243d}
+.v17-published-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:28px;align-items:start}
+.v17-published-body{padding:18px 5px}.v17-published-body h2{font-size:clamp(24px,3vw,35px);letter-spacing:-.04em;margin:28px 0 13px}.v17-published-body p{line-height:1.7;color:#586781}
+.v17-detail-graphic{display:grid;place-items:center;min-height:260px;background:linear-gradient(130deg,#ecf3ff,#d7e7ff);border-radius:22px;font-size:116px}
+.v17-interest-panel{position:sticky;top:105px}.v17-interest-panel .dsd-count{margin:28px 0}
+@media (max-width:760px){.v17-section-heading{flex-direction:column;gap:6px}.v17-published-grid{grid-template-columns:1fr}.v17-interest-panel{position:static}}

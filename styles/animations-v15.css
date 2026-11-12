@@ -1,0 +1,70 @@
+/* DeseAI V15 — dirección de movimiento. Overlay sin alterar el layout ni los assets. */
+/* Los efectos solo existen cuando JS prepara el elemento, y desaparecen en movimiento reducido. */
+@media (prefers-reduced-motion: no-preference) {
+  #view-home.v15-ready .v15-unit {
+    opacity:0;
+    translate: 0 24px;
+    transition: opacity 780ms cubic-bezier(.22,1,.36,1),
+                translate 850ms cubic-bezier(.22,1,.36,1);
+    transition-delay:var(--v15-delay,0ms);
+  }
+  #view-home.v15-ready .v15-group.v15-active .v15-unit {
+    opacity:1;
+    translate:0 0;
+  }
+  #view-home.v15-ready .v15-unit.v15-illustration {translate:0 32px;}
+  #view-home.v15-ready .v15-group.v15-active .v15-unit.v15-illustration {translate:0 0;}
+  /* Mayor ligereza en el móvil, sin saltos de layout. */
+  @media (max-width:720px) {
+    #view-home.v15-ready .v15-unit {translate:0 15px;transition-duration:610ms,700ms;}
+    #view-home.v15-ready .v15-unit.v15-illustration {translate:0 20px;}
+  }
+  /* Cascada inicial del menú, sin tocar las rutas o sus estados activos. */
+  @keyframes v15-nav-intro {from{opacity:0;translate:0 -11px}to{opacity:1;translate:0 0}}
+  html.v15-intro .site-header .brand,
+  html.v15-intro .site-header .desktop-links > a,
+  html.v15-intro .site-header .nav-cta,
+  html.v15-intro .site-header .mobile-menu {
+    animation:v15-nav-intro 650ms both cubic-bezier(.22,1,.36,1);
+    animation-delay:var(--v15-nav-delay,0ms);
+  }
+  /* El texto introductorio del hero ya se anima en V14; enriquecemos la escena. */
+  @keyframes v15-bubble-arrival {
+    0% {opacity:0;translate:0 16px;scale:.94;}
+    68% {opacity:1;translate:0 -2px;scale:1.015;}
+    100% {opacity:1;translate:0 0;scale:1;}
+  }
+  html.v15-intro #view-home .stage-bubble{
+    animation:v15-bubble-arrival 790ms both cubic-bezier(.22,1,.36,1);
+  }
+  html.v15-intro #view-home .stage-buyer-one{animation-delay:750ms;}
+  html.v15-intro #view-home .stage-buyer-two{animation-delay:920ms;}
+  html.v15-intro #view-home .stage-seller{animation-delay:1090ms;}
+  html.v15-intro #view-home .stage-match-note{
+    animation:v15-bubble-arrival 750ms both cubic-bezier(.22,1,.36,1) 1280ms;
+  }
+  @keyframes v15-cloud-drift {0%,100%{translate:0 0}50%{translate:0 -9px}}
+  html.v15-intro #view-home .stage-cloud-left{animation:v15-cloud-drift 7.6s ease-in-out infinite;}
+  html.v15-intro #view-home .stage-cloud-right{animation:v15-cloud-drift 8.8s ease-in-out infinite -2.3s;}
+  @keyframes v15-orbit-node {0%,100%{opacity:.58}50%{opacity:1}}
+  #view-home.v15-ready .stage-orbits circle{animation:v15-orbit-node 3.8s ease-in-out infinite;}
+  #view-home.v15-ready .stage-orbits circle:nth-of-type(2){animation-delay:1s}
+  #view-home.v15-ready .stage-orbits circle:nth-of-type(3){animation-delay:1.9s}
+  /* Las tarjetas siguen siendo HTML reales; imagen y texto llegan por separado. */
+  #view-home.v15-ready .ds-experience.v15-active .ds-exp-count {
+    animation:v15-bubble-arrival 630ms both cubic-bezier(.22,1,.36,1) 420ms;
+  }
+  #view-home.v15-ready .ds-match-stat.v15-unit {transition-duration:680ms,750ms;}
+  /* Feedback delicado al interactuar, sin desplazar tarjetas ni alterar dimensiones. */
+  #view-home.v15-ready :is(.stage-button,.ds-wish-btn,.ds-match-btn,.ds-filter):active {
+    scale:.975;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #view-home .v15-unit,
+  #view-home .v15-illustration {opacity:1!important;translate:none!important;scale:1!important;transition:none!important;}
+  .site-header :is(.brand,.desktop-links > a,.nav-cta,.mobile-menu),
+  #view-home :is(.stage-cloud,.stage-bubble,.stage-match-note,.stage-orbits circle,.ds-exp-count) {
+    animation:none!important;
+  }
+}

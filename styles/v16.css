@@ -1,0 +1,5 @@
+/* V16: only small compatibility rules; V15 visual CSS remains unchanged. */
+.v16-footer{padding:35px 0 42px;border-top:1px solid #edf0f5;color:#6e7990;background:#fbfcff}.v16-footer .container{display:flex;gap:15px;align-items:center;flex-wrap:wrap;font-size:12px}.v16-footer b{font-size:19px;color:#092153}.v16-footer small{margin-left:auto;font-size:11px}.v16-loading{padding:90px 0}.v16-match{display:flex;align-items:center;gap:13px;background:#f6f9ff;border:1px solid #e5eaf5;border-radius:16px;padding:12px;margin:10px 0;text-decoration:none;color:#092047}.v16-match img{height:64px;width:68px;object-fit:cover;border-radius:12px}.v16-match span:nth-child(2){flex:1;display:grid;gap:5px}.v16-match small{font-size:11px;color:#697b97}.v16-gallery-art{display:grid;place-items:center}.v16-gallery-art img{height:75%;width:75%;object-fit:contain}.v16-gallery-art .dsd-gallery-art-label{position:absolute;bottom:15px;left:20px}
+@media (max-width:650px){.v16-footer small{margin-left:0;flex-basis:100%}.v16-match img{height:58px;width:58px}}
+
+#view-home .ds-tech-card[hidden], #ds-featured-empty[hidden], #stage-offer-toast[hidden] {display:none!important;}
